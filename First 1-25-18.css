@@ -1,0 +1,32 @@
+body{
+    color: white;
+    background-color: skyblue;
+}
+#filler1{
+    color: red;
+    background-color: violet;  
+}
+#filler2{
+    color: orange;
+    background-color: indigo;  
+}
+#filler3{
+    color: yellow;
+    background-color: blue;
+}
+#filler4{
+    color: green;
+    background-color: rgb(0, 255, 0);
+}
+#filler5{
+    color: blue;
+    background-color: yellow;
+}
+#filler6{
+    color: indigo;
+    background-color: orange;
+}
+#filler7{
+    color: violet;
+    background-color: rgb(255, 0, 0);
+}
