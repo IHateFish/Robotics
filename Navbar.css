@@ -8,23 +8,7 @@ body  {
     color: white;
     padding: 10px 0 10px 0;
 }
-
-#home {
-    margin-left: 200px;
-    margin-right: 200px;
-}
-
-#index {
-    margin-left: 200px;
-    margin-right: 200px;
-}
-
-#questions {
-    margin-left: 200px;
-    margin-right: 200px;
-}
-
-#links {
+.navElement{
     margin-left: 200px;
     margin-right: 200px;
 }
