@@ -2,19 +2,58 @@
 <html>
 
 <head>
+    <title>
+        Navbar
+    </title>
     <link rel="stylesheet" type="text/css" href="Navbar.css">
 </head>
 
-<body>
+<body id="body">
     <div id="navbar">
         <a href="https://www.google.com" target="_blank" class="navElement" id="home">Google</id>
-        <a href="https://www.google.com/gmail/" target="_blank" class="navElement" id="index">Gmail</id>
-        <a href="https://www.youtube.com/" target="_blank" class="navElement" id="questions">Youtube</id>
-        <a href="https://login.jupitered.com/login/" target="_blank" class="navElement" id="links">Jupiter Grades</id>
+            <a href="https://www.google.com/gmail/" target="_blank" class="navElement" id="index">Gmail</id>
+                <a href="https://www.youtube.com/" target="_blank" class="navElement" id="questions">Youtube</id>
+                    <a href="https://login.jupitered.com/login/" target="_blank" class="navElement" id="links">Jupiter Grades</a>
     </div>
     <div id="box">
 
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>    
+    $(document).ready(function () {
+        //this code
+        //prompt("I'm ready!")
+        // var response = prompt("Who are you?")
+        // console.log("Hello, " + response)
+
+        // $(document).click(function () {
+        //     console.log($(this))
+        // })
+
+        // $(document).click(function(event) {
+        //     $("#" + event.target.id).remove();
+        // });
+
+        setInterval(function() {
+            var red = "#ff0000"
+            var blue = "#0000ff"
+            console.log($(body).css("background-color"))
+            // if($(body).css("background-color") == "rgb(255, 0, 0)") {
+            //     $(body).css("background-color", blue)
+            // } else {
+            //     $(body).css("background-color", red)
+            // }
+            $(body).css("background-color", '#'+Math.floor(Math.random()*16777215).toString(16))
+            $("#box").css("background-color", '#'+Math.floor(Math.random()*16777215).toString(16))
+        }, 1)
+
+        $("#box").click(function() {
+            
+            
+        })
+
+    })
+</script>
 
 </html>
