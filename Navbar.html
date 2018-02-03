@@ -20,6 +20,7 @@
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="p5.play.js"></script>
 <script>    
     $(document).ready(function () {
         //this code
@@ -34,6 +35,19 @@
         // $(document).click(function(event) {
         //     $("#" + event.target.id).remove();
         // });
+        var spr;
+function setup() {
+  createCanvas(400, 400);
+  spr = createSprite(
+    width/2, height/2, 40, 40);
+  spr.shapeColor = color(255);
+}
+function draw() {
+  background(50);
+  spr.position.x = mouseX;
+  spr.position.y = mouseY;
+  drawSprites();
+}
 
         setInterval(function() {
             var red = "#ff0000"
@@ -46,11 +60,15 @@
             // }
             $(body).css("background-color", '#'+Math.floor(Math.random()*16777215).toString(16))
             $("#box").css("background-color", '#'+Math.floor(Math.random()*16777215).toString(16))
-        }, 1)
+            $(navbar).css("background-color", '#'+Math.floor(Math.random()*16777215).toString(16))
+        }, 1000)
 
         $("#box").click(function() {
+            $("#box").hide();
             
-            
+        })
+        $("#navbar").click(function() {
+            $("#navbar").hide();
         })
 
     })
