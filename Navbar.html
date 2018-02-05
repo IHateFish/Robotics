@@ -10,10 +10,11 @@
 
 <body id="body">
     <div id="navbar">
-        <a href="https://www.google.com" target="_blank" class="navElement" id="home">Google</id>
-            <a href="https://www.google.com/gmail/" target="_blank" class="navElement" id="index">Gmail</id>
-                <a href="https://www.youtube.com/" target="_blank" class="navElement" id="questions">Youtube</id>
+        <a href="https://www.google.com" target="_blank" class="navElement" id="home">Google</a>
+            <a href="https://www.google.com/gmail/" target="_blank" class="navElement" id="index">Gmail</a>
+                <a href="https://www.youtube.com/" target="_blank" class="navElement" id="questions">Youtube</a>
                     <a href="https://login.jupitered.com/login/" target="_blank" class="navElement" id="links">Jupiter Grades</a>
+                      <p class="navElement" id="alert">Issac</p>
     </div>
     <div id="box">
 
@@ -21,7 +22,7 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script language="javascript" type="text/javascript" src="p5.play.js"></script>
-<script>    
+<script>
     $(document).ready(function () {
         //this code
         //prompt("I'm ready!")
@@ -65,12 +66,15 @@ function draw() {
 
         $("#box").click(function() {
             $("#box").hide();
-            
+
         })
         $("#navbar").click(function() {
             $("#navbar").hide();
         })
 
+        $(".alert").click(function(){
+          alert("you clicked me!")
+        })
     })
 </script>
 

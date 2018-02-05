@@ -1,0 +1,13 @@
+body{
+  background-color: black;
+  color: white;
+}
+.a{
+  color: white;
+  margin-left: 75px;
+  margin-right: 75px;
+}
+#center{
+  background-color: orange;
+  text-align: center;
+}
