@@ -10,12 +10,21 @@
 
 <body id="body">
     <div id="navbar">
-        <a href="https://www.google.com" target="_blank" class="navElement" id="home">Google</id>
-            <a href="https://www.google.com/gmail/" target="_blank" class="navElement" id="index">Gmail</id>
-                <a href="https://www.youtube.com/" target="_blank" class="navElement" id="questions">Youtube</id>
-                    <a href="https://login.jupitered.com/login/" target="_blank" class="navElement" id="links">Jupiter Grades</a>
+        <a href="https://www.google.com" target="_blank" class="navElement" id="home">Google</a>
+        <a href="https://www.google.com/gmail/" target="_blank" class="navElement" id="index">Gmail</a>
+        <a href="https://www.youtube.com/" target="_blank" class="navElement" id="questions">Youtube</a>
+        <a href="https://login.jupitered.com/login/" target="_blank" class="navElement" id="links">Jupiter Grades</a>
     </div>
     <div id="box">
+        <button id="firstClick">Click me</button>
+        <p>
+            <button id="endMe">End me</button>
+        </p>
+        <p>
+            <button id="delete">Delete everything</button>
+        </p>
+
+        <input type="text" placeholder="name" id="nameBox" />
 
     </div>
 </body>
@@ -36,40 +45,68 @@
         //     $("#" + event.target.id).remove();
         // });
         var spr;
-function setup() {
-  createCanvas(400, 400);
-  spr = createSprite(
-    width/2, height/2, 40, 40);
-  spr.shapeColor = color(255);
-}
-function draw() {
-  background(50);
-  spr.position.x = mouseX;
-  spr.position.y = mouseY;
-  drawSprites();
-}
+        function setup() {
+            createCanvas(400, 400);
+            spr = createSprite(
+                width / 2, height / 2, 40, 40);
+            spr.shapeColor = color(255);
+        }
+        function draw() {
+            background(50);
+            spr.position.x = mouseX;
+            spr.position.y = mouseY;
+            drawSprites();
+        }
 
-        setInterval(function() {
+        setInterval(function () {
             var red = "#ff0000"
-            var blue = "#0000ff"
-            console.log($(body).css("background-color"))
+            var blue = "#0000ff";
             // if($(body).css("background-color") == "rgb(255, 0, 0)") {
             //     $(body).css("background-color", blue)
             // } else {
             //     $(body).css("background-color", red)
             // }
-            $(body).css("background-color", '#'+Math.floor(Math.random()*16777215).toString(16))
-            $("#box").css("background-color", '#'+Math.floor(Math.random()*16777215).toString(16))
-            $(navbar).css("background-color", '#'+Math.floor(Math.random()*16777215).toString(16))
+            $(body).css("background-color", '#' + Math.floor(Math.random() * 16777215).toString(16))
+            $("#box").css("background-color", '#' + Math.floor(Math.random() * 16777215).toString(16))
+            $(navbar).css("background-color", '#' + Math.floor(Math.random() * 16777215).toString(16))
         }, 1000)
 
-        $("#box").click(function() {
-            $("#box").hide();
-            
-        })
-        $("#navbar").click(function() {
+        //     $("#box").click(function() {
+        //        $("#box").hide();
+        //    })
+
+        $("#navbar").click(function () {
             $("#navbar").hide();
         })
+
+        $("#firstClick").click(function () {
+            var name = $("#nameBox").val()
+            $("#nameBox").val("")
+            var text = $(document.createElement("input"));
+            text.addClass("wrong")
+            text.attr("id", "box")
+            text.attr("placeholder", name)
+            text.attr("type", "text")
+            text.html("Hello World");
+            $(body).append(text)
+        })
+
+        $("#endMe").click(function() {
+            $(".wrong").remove();
+        })
+
+        $("#nameBox").keypress(function(e) {
+            if(e.which == 13) {
+                console.log(e.type + ": " + $(this).val())
+                $(this).val("")
+            }
+        })
+
+        $("#delete").click(function(){
+            $(body).remove();
+        })
+
+
 
     })
 </script>
