@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>Issac's Game</title>
+    <script>
+
+        var prize = Math.floor(Math.random() * 3 + 1);
+        var openDoor = Math.floor(Math.random() * 3 + 1);
+
+
+
+        function checkguess() {
+
+            var user = document.getElementById('guess');
+            var userDoor = guess.value;
+            var keep = guess.value;
+
+
+            while (openDoor == userDoor || openDoor == prize) {
+                openDoor = Math.floor(Math.random() * 3 + 1);
+
+            }
+
+            output.value = keep;
+            alert("I will open Door" + " " + openDoor + ". Will you like to change your door? Say 1 for yes and 2 for no. Then press the'New' button.")
+
+        }
+
+        function New() {
+            var useDoor = document.getElementById('output');
+            userDoor = output.value
+            var userNew = document.getElementById('guess');
+            var useNew = guess.value
+            var newDoor = Math.floor(Math.random() * 3 + 1);
+
+            while (useNew == 1 && newDoor == openDoor || newDoor == userDoor) {
+                newDoor = Math.floor(Math.random() * 3 + 1);
+            }
+
+
+            if (newDoor == prize)
+                alert("You Win! The car was in Door " + prize)
+            else if (userDoor != prize)
+                alert("You Lose! The car was in Door " + prize + ". " + "Your door choice was Door" + " " + output.value)
+
+            if (newDoor == 2) {
+                userDoor = userDoor;
+            }
+
+
+
+
+        }
+
+
+
+
+
+    </script>
+    <style>
+        body {
+            background-color: #52D017;
+        }
+
+        h3 {
+            color: red;
+        }
+
+        h2 {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        <center>Monty Hall Game
+            <center>
+    </h2>
+    <form>
+        <center>
+            <h3>Choose a door number:1-3</h3>
+            <p>
+                <input id="guess" type="text" size="8" />
+                <br>
+            </p>
+            <p>
+                <input type="button" value="Guess" onclick="checkguess()" />
+                <br>
+            </p>
+            <p>
+                <input id="output" type="text" size="60" />
+                <br>
+            </p>
+            <p>
+                <input type="button" value="New" onclick="New()" /> </p>
+        </center>
+    </form>
+</body>
+
+</html>

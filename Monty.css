@@ -1,0 +1,12 @@
+body{
+    color: gold;
+    background-color: darkseagreen;
+}
+#guess{
+    color: red;
+    background-color: aqua;
+}
+#change{
+    color: green;
+    background-color: bisque;
+}

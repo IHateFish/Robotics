@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<title>
+    Monty Hall Problem
+</title>
+<link rel="stylesheet" type="text/css" href="Monty.css">
+
+<head>
+
+</head>
+
+<body>
+    <input type="text" placeholder="1-3" id="guess" />
+    <p>
+        <input type="text" placeholder="Yes or no?" id="change" hidden/>
+    </p>
+    <button id="makeG"> Guess </button>
+    <p>
+        <button id="changeG" hidden> Finish </button>
+    </p>
+    <button id="open" hidden> Open Door</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var guess;
+        var openDoor;
+        var prize;
+        alert("Guess a door 1-3 in the door choice. Then press Guess")
+
+        $("#makeG").click(function () {
+            guess = $("#guess").val()
+            openDoor = Math.floor(Math.random() * 3 + 1);
+            prize = Math.floor(Math.random() * 3 + 1);
+
+
+
+            while (openDoor == guess || openDoor == prize) {
+                openDoor = Math.floor(Math.random() * 3 + 1);
+            }
+
+            while (prize == openDoor) {
+                openDoor = Math.floor(Math.random() * 3 + 1);
+            }
+            console.log("Choice" + guess)
+            console.log("open" + openDoor)
+            console.log("prize" + prize)
+            while(guess != 1 && guess != 2 && guess != 3){
+                alert("Don't use letters. Try again!")
+                break;
+            }
+            
+            if(guess == 1 || guess == 2 || guess == 3) {
+                $("#guess").hide()
+                $("#makeG").hide()
+                $("#open").show()
+            }
+               
+
+         
+
+        })
+
+        $("#open").click(function () {
+            $("#changeG").show()
+            $("#change").show()
+            alert("I am now opening Door " + openDoor + ". Would you like to change your answer?")
+            $("#open").hide()
+        })
+
+        $("#changeG").click(function () {
+            console.log("Choice" + guess)
+            console.log("open" + openDoor)
+            console.log("prize" + prize)
+
+            var oldGuess = guess
+            var changeGuess = $("#change").val()
+            if (changeGuess.toLowerCase() == "yes") {
+                guess = Math.floor(Math.random() * 3 + 1);
+                while (guess == openDoor || guess == oldGuess) {
+                    guess = Math.floor(Math.random() * 3 + 1);
+                }
+            }
+            while(changeGuess != "yes" && changeGuess != "no"){
+                alert("Put yes or no!")
+                break;
+            }
+
+            if (guess == prize) {
+                alert("You Win!")
+            } else if (guess != prize) {
+                alert("You lose!")
+            }
+
+        })
+
+
+    })
+
+</script>
+
+</html>
