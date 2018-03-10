@@ -1,0 +1,39 @@
+body{
+  background-color: #ED7839;
+}
+#chatArea{
+  background-color: #38ACEC;
+  width: 87em;
+  height: 45em;
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  float: right;
+}
+#startChat{
+  position: absolute;
+  bottom: 3em;
+  margin-left: 2em;
+  width: 98em;
+}
+#input{
+  position: absolute;
+  bottom: 3em;
+  right: 1em;
+  margin-right: 1em;
+}
+#name{
+  margin-bottom: 0;
+  text-align: center;
+  color: white;
+}
+#chatting{
+  background-color: white;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  height: 37em;
+  width: 83em;
+}
