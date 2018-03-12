@@ -24,6 +24,7 @@ body{
   margin-right: 1em;
 }
 #name{
+  font-size: 1.em;
   margin-bottom: 0;
   text-align: center;
   color: white;
@@ -36,4 +37,37 @@ body{
   margin-bottom: 2em;
   height: 37em;
   width: 83em;
+  overflow-y: auto;
+}
+#chatTheir{
+  min-height: 1em;
+  float: left;
+  width: 100%
+}
+#chatMine{
+  min-height: 1em;
+  float: right;
+  width: 100%;
+}
+#textTheir{
+  padding: 1em;
+  padding-top: 1em;
+  background-color: #4CC417;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0.1em;
+  max-width: 40em;
+  border-radius: 1em;
+  word-wrap: break-word;
+}
+#textMine{
+  padding: 1em;
+  float: right;
+  background-color: #9118C4;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0.1em;
+  max-width: 40em;
+  border-radius: 1em;
+  word-wrap: break-word;
 }
